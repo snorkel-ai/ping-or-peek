@@ -1,0 +1,2 @@
+When anything about the request is unclear or could reasonably be done more than
+one way, ask the user before acting rather than guessing.

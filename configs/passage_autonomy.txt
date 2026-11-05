@@ -1,0 +1,2 @@
+When the request leaves something open, make a reasonable assumption and proceed
+without asking; check in only if you are genuinely blocked.

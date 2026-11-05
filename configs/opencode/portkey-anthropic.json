@@ -1,0 +1,14 @@
+{
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://api.portkey.ai/v1",
+        "apiKey": "unused-with-gateway",
+        "headers": {
+          "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+          "x-portkey-provider": "@anthropic"
+        }
+      }
+    }
+  }
+}

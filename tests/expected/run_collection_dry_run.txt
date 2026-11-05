@@ -1,0 +1,2700 @@
+{
+  "job_name": "collection__claude-code__S",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-claude-x",
+        "acpx_config": {
+          "claudeCodeOptions": {
+            "thinking": {
+              "type": "adaptive",
+              "display": "summarized"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "claude-fable-5-1",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-opus-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-sonnet-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__claude-code__A",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-claude-x",
+        "acpx_config": {
+          "claudeCodeOptions": {
+            "thinking": {
+              "type": "adaptive",
+              "display": "summarized"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-A/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "claude-fable-5-1",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "default",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-opus-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "default",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-sonnet-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "default",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__claude-code__B",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-claude-x",
+        "acpx_config": {
+          "claudeCodeOptions": {
+            "thinking": {
+              "type": "adaptive",
+              "display": "summarized"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/claude-B/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "claude-fable-5-1",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-opus-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "claude-code",
+      "model_name": "claude-sonnet-5-5",
+      "kwargs": {
+        "version": "2.1.296",
+        "acp_adapter_package": "@agentclientprotocol/claude-agent-acp",
+        "acp_adapter_version": "0.90.0",
+        "permission_mode": "auto",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__codex__S",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "environment": {
+    "extra_docker_compose": [
+      "<jobs>/configs/codex-seccomp-unconfined.compose.yaml"
+    ]
+  },
+  "agents": [
+    {
+      "name": "codex",
+      "model_name": "gpt-6-astra",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-S.toml",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6-luna",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-S.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6.1-sol",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-S.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__codex__A",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "environment": {
+    "extra_docker_compose": [
+      "<jobs>/configs/codex-seccomp-unconfined.compose.yaml"
+    ]
+  },
+  "agents": [
+    {
+      "name": "codex",
+      "model_name": "gpt-6-astra",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-A.toml",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6-luna",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-A.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6.1-sol",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "workspace-write",
+        "config": "<jobs>/configs/codex-A.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__codex__B",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x"
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "environment": {
+    "extra_docker_compose": [
+      "<jobs>/configs/codex-seccomp-unconfined.compose.yaml"
+    ]
+  },
+  "agents": [
+    {
+      "name": "codex",
+      "model_name": "gpt-6-astra",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "agent-full-access",
+        "config": "<jobs>/configs/codex-B.toml",
+        "reasoning_effort": "xhigh"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6-luna",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "agent-full-access",
+        "config": "<jobs>/configs/codex-B.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "codex",
+      "model_name": "gpt-6.1-sol",
+      "kwargs": {
+        "version": "0.162.1",
+        "acp_adapter_package": "@agentclientprotocol/codex-acp",
+        "acp_adapter_version": "2.2.2",
+        "acp_agent_mode": "agent-full-access",
+        "config": "<jobs>/configs/codex-B.toml",
+        "reasoning_effort": "medium"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__opencode__S",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x",
+        "session_config": {
+          "effort": "default"
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/plain/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-fable-5-1",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-fable-5-1": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "xhigh"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-opus-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-opus-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-sonnet-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-sonnet-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-astra",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-astra": {
+                  "options": {
+                    "reasoningEffort": "xhigh",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-luna",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-luna": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6.1-sol",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6.1-sol": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__opencode__A",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x",
+        "session_config": {
+          "effort": "default"
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-A/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-fable-5-1",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-fable-5-1": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "xhigh"
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-opus-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-opus-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-sonnet-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-sonnet-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-astra",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-astra": {
+                  "options": {
+                    "reasoningEffort": "xhigh",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-luna",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-luna": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6.1-sol",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6.1-sol": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "permission": {
+            "edit": "ask",
+            "bash": "ask"
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}
+{
+  "job_name": "collection__opencode__B",
+  "jobs_dir": "<jobs>",
+  "n_concurrent_trials": 4,
+  "agent_setup_timeout_multiplier": 2.0,
+  "user_agent": {
+    "name": "terminus-2",
+    "model_name": "openai/@openai/gpt-6.1-sol",
+    "kwargs": {
+      "api_base": "https://api.portkey.ai/v1",
+      "reasoning_effort": "medium"
+    },
+    "user_persona_path": "<repo>/persona/persona.md",
+    "user_prompt_template_path": "<repo>/persona/user_prompt.md.j2",
+    "bridge": {
+      "kind": "acp",
+      "kwargs": {
+        "caller_input": true,
+        "start_owner_on_setup": true,
+        "acpx_package": "acpx-x",
+        "session_config": {
+          "effort": "default"
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_hidden__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_available_checker_exposed__seed114"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed100"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed101"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed102"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed103"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed104"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed105"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed106"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed107"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed108"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed109"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed110"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed111"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed112"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed113"
+    },
+    {
+      "path": "<repo>/tasks/agents-B/user_unavailable_checker_exposed__seed114"
+    }
+  ],
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-fable-5-1",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-fable-5-1": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "xhigh"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-opus-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-opus-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "anthropic/claude-sonnet-5-5",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "anthropic": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@anthropic"
+                }
+              },
+              "models": {
+                "claude-sonnet-5-5": {
+                  "options": {
+                    "thinking": {
+                      "type": "adaptive",
+                      "display": "summarized"
+                    },
+                    "effort": "medium"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-astra",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-astra": {
+                  "options": {
+                    "reasoningEffort": "xhigh",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6-luna",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6-luna": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    },
+    {
+      "name": "opencode",
+      "model_name": "openai/gpt-6.1-sol",
+      "kwargs": {
+        "version": "1.19.0",
+        "opencode_config": {
+          "provider": {
+            "openai": {
+              "options": {
+                "baseURL": "https://api.portkey.ai/v1",
+                "apiKey": "unused-with-gateway",
+                "headers": {
+                  "x-portkey-api-key": "{env:PORTKEY_API_KEY}",
+                  "x-portkey-provider": "@openai"
+                }
+              },
+              "models": {
+                "gpt-6.1-sol": {
+                  "options": {
+                    "reasoningEffort": "medium",
+                    "reasoningSummary": "auto",
+                    "include": [
+                      "reasoning.encrypted_content"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fake_vcs": false
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_BASE_URL": "${ANTHROPIC_BASE_URL}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${PORTKEY_ANTHROPIC_HEADERS}",
+        "PORTKEY_API_KEY": "${PORTKEY_API_KEY}",
+        "CODEX_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "extra_allowed_hosts": [
+        "api.portkey.ai"
+      ]
+    }
+  ]
+}

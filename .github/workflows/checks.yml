@@ -1,0 +1,36 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# A newer run cancels a pending one in its group whatever cancel-in-progress says, so each push
+# to main gets a group of its own; a pull request's group cancels its superseded runs.
+concurrency:
+  group: checks-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15  # the suite takes under a minute; a hang fails here, not after 6 hours
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e  # v10.3.2
+        with:
+          version: "0.8.22"
+      # Harbor is our fork, in a repository this job's read-only token can't read, so the sync
+      # leaves it out and installs the project itself and the default groups (dev, analysis and
+      # notebook): code that starts a new Python process imports `ping_or_peek` only if it is
+      # installed. `--no-sync` keeps `uv run` from installing Harbor afterwards. Tests that need
+      # Harbor skip; `-rs` names each one with its reason.
+      - run: uv sync --locked --no-install-package harbor
+      # The tests make no network calls and CI doesn't fetch the dataset, so the tests that need
+      # it skip, each with its reason.
+      - run: uv run --no-sync pytest -rs

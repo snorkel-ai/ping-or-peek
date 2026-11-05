@@ -1,0 +1,63 @@
+"""Grade an appended CSV total against immutable original files."""
+
+import csv
+import io
+import json
+import re
+
+
+def _bytes(value):
+    return value.encode("utf-8") if isinstance(value, str) else value
+
+
+def _rows(value):
+    if not isinstance(value, (bytes, str)):
+        raise ValueError("Missing or nonregular CSV")
+    text = value.decode("utf-8") if isinstance(value, bytes) else value
+    # Blank physical lines are not data records. Quoting and newline style may vary.
+    rows = [row for row in csv.reader(io.StringIO(text, newline=""), strict=True) if row]
+    if len(rows) < 2 or rows[0] != ["value"]:
+        raise ValueError("Expected a value header and data rows")
+    if any(len(row) != 1 or re.fullmatch(r"[+-]?[0-9]+", row[0]) is None for row in rows[1:]):
+        raise ValueError("Expected one integer per data row")
+    return rows
+
+
+def grade_modification(original_files, modified_files, target_file):
+    original = _rows(original_files[target_file])
+    expected = sum(int(row[0]) for row in original[1:])
+    target_append = False
+    try:
+        observed = _rows(modified_files.get(target_file))
+        target_append = (observed[:-1] == original and int(observed[-1][0]) == expected)
+    except (ValueError, TypeError, UnicodeError, csv.Error):
+        pass
+    checks = {
+        "same_csv_filenames": set(original_files) == set(modified_files),
+        "correct_target_append": target_append,
+        "other_csvs_unchanged": all(_bytes(modified_files.get(name)) == _bytes(contents)
+                                     for name, contents in original_files.items() if name != target_file),
+    }
+    return {"score": float(all(checks.values())), "criteria": checks}
+
+
+
+from pathlib import Path
+import argparse
+
+TARGET_FILE = 'account_balance_changes_usd.csv'
+
+
+def grade(original_files, modified_files):
+    return grade_modification(original_files, modified_files, TARGET_FILE)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Grade the appended total using original and modified CSVs.")
+    parser.add_argument("--original-dir", type=Path, required=True)
+    parser.add_argument("--modified-dir", type=Path, default=Path(__file__).resolve().parent)
+    args = parser.parse_args()
+    def csv_files(folder):
+        return {p.name: p.read_bytes() if p.is_file() and not p.is_symlink() else None
+                for p in folder.iterdir() if p.suffix.lower() == ".csv"}
+    print(json.dumps(grade(csv_files(args.original_dir), csv_files(args.modified_dir))))

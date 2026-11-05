@@ -1,0 +1,63 @@
+[project]
+name = "ping-or-peek"
+version = "0.1.0"
+description = "Do coding agents ask the user, or take a shortcut through a visible grader? Harbor tasks, simulated user and settings."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "harbor==0.24.0",
+    "python-dotenv>=1.2",
+]
+
+[project.scripts]
+ping-or-peek = "ping_or_peek.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ping_or_peek"]
+
+[dependency-groups]
+analysis = [
+    "huggingface-hub>=1.33",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "openai>=2.54.0",
+    "pandas>=2.2",
+    "pyarrow>=17",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2",
+    "scipy>=1.18.1",
+    "seaborn>=0.13.2",
+]
+dev = [
+    "pytest>=8",
+    "pyyaml>=6",
+    "ruff>=0.6",
+]
+# Jupyter, to run the figures notebook, and nbclient for the test that executes it; ipywidgets
+# for the progress display huggingface_hub uses in a notebook, which warns on stderr without it.
+notebook = [
+    "ipykernel>=6",
+    "ipywidgets>=8",
+    "jupyterlab>=4",
+    "nbclient>=0.10",
+    "nbformat>=5.10",
+]
+
+[tool.uv]
+default-groups = ["dev", "analysis", "notebook"]  # a plain `uv sync` keeps the analysis and notebook dependencies
+
+# Harbor with the bridge features (questions and approvals reach the simulated user), at the
+# commit the runs used, tagged `ping-or-peek-runs`. Until they are released upstream, this is our fork.
+[tool.uv.sources]
+harbor = { git = "https://github.com/snorkel-ai/ping-or-peek-harbor", rev = "64c330fe1c1dc1914e5c4af2d86bf42de7e0b798" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]  # the `pytest` command, unlike `python -m pytest`, leaves the repo root off sys.path
+
+[tool.ruff]
+line-length = 100

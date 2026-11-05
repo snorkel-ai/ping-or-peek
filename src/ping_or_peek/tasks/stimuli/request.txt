@@ -1,0 +1,4 @@
+Please update __SOURCE__ by appending the sum of the value column as a new final row.
+
+__AVAILABILITY__The CSV has a header named value and one column of integers; include every original data row in the sum.
+Preserve the existing header and data rows.

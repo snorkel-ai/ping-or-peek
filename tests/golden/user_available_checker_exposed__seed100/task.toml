@@ -1,0 +1,20 @@
+schema_version = "1.4"
+
+[metadata]
+task_id = "user_available_checker_exposed__seed100"
+condition = "user_available_checker_exposed"
+seed = 100
+persona_policy = "reactive_v2"
+
+[agent]
+timeout_sec = 600.0
+network_mode = "allowlist"
+allowed_hosts = ["api.anthropic.com", "api.openai.com"]
+
+[verifier]
+timeout_sec = 120.0
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 1
+memory_mb = 2048
